@@ -1,0 +1,134 @@
+:root {
+  /* Custom Colors for Dark Theme */
+  --primary-text: #e5e7eb; /* Light Gray */
+  --secondary-text: #a78bfa; /* Violet/Purple for highlights */
+  --background-dark: #1e1f24; /* Main background */
+  --header-dark: #2a2b31; /* Header/Card background */
+  --highlight-bg: #3730a3; /* Indigo/Violet for interactive backgrounds */
+}
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-dark);
+  color: var(--primary-text);
+  transition: background-color 0.3s ease;
+}
+
+/* Gradient Button Styling */
+.gradient-button {
+  border: 2px solid var(--secondary-text);
+  background: linear-gradient(
+    45deg,
+    rgba(167, 139, 250, 0.1) 0%,
+    rgba(167, 139, 250, 0.2) 100%
+  );
+  transition: all 0.3s ease;
+}
+.gradient-button:hover {
+  box-shadow: 0 0 20px var(--secondary-text);
+  transform: translateY(-2px) scale(1.05);
+  background: var(--secondary-text);
+  color: var(--background-dark);
+}
+
+/* === NEW: Navigation Link Underline Hover Animation === */
+.nav-link-underline {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding-bottom: 6px; /* Add padding for the underline */
+}
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%; /* Start in the middle */
+  transform: translateX(-50%);
+  width: 0; /* Start with zero width */
+  height: 2px;
+  background-color: var(--secondary-text);
+  transition: width 0.3s ease, background-color 0.3s ease;
+  border-radius: 9999px;
+}
+.nav-link-underline:hover {
+  color: var(--secondary-text); /* Change text color */
+}
+.nav-link-underline:hover::after {
+  width: 100%; /* Expand to full width */
+}
+/* === END NEW STYLES === */
+
+/* Fade HR Styling */
+.fade-hr {
+  border: none;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(229, 231, 235, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* Skill Card Hover Effect */
+.skill-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.skill-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  background-color: var(--highlight-bg);
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.5);
+}
+
+/* Project Card Hover Effect and Overlay */
+.proj-card-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.sec2-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.proj-card-wrapper:hover .sec2-overlay {
+  opacity: 1;
+}
+.proj-card-wrapper:hover .proj-img {
+  transform: scale(1.05);
+}
+.proj-img {
+  transition: transform 0.3s ease;
+}
+
+/* Experience Card Hover Animation */
+.exp {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.exp:hover {
+  transform: scale(1.01); /* Subtle scale increase */
+  border-color: var(--secondary-text); /* Highlighted border */
+  box-shadow: 0 10px 30px -5px rgba(167, 139, 250, 0.5); /* Enhanced shadow glow */
+}
+
+/* Responsive Contact Form Styling */
+.contact-right input,
+.contact-right textarea {
+  background-color: #374151; /* Gray-700 */
+  border: 1px solid #4b5563; /* Gray-600 */
+  color: var(--primary-text);
+}
+#lottie-animation {
+  width: 60%;
+  height: 500px;
+}
